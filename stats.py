@@ -11,3 +11,13 @@ def get_num_characters(textfile):
         else:
             char_count[char] = 1
     return char_count
+
+def sort_on(items):
+    return items["num"]
+
+def sort_chars(chars):
+    characters = []
+    for i in chars:
+        characters += [{"char":i,"num":chars[i]}]
+    characters.sort(key=sort_on, reverse=True)
+    return characters
