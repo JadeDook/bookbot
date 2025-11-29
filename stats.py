@@ -5,6 +5,7 @@ def count_words(textfile):
 def get_num_characters(textfile):
     char_count = {}
     for char in textfile:
+        char = char.lower()
         if char in char_count:
             char_count[char] += 1
         else:
