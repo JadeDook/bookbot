@@ -1,3 +1,4 @@
+import sys
 from stats import count_words, get_num_characters, sort_chars
 
 def get_book_text(filepath) -> str:
@@ -7,7 +8,10 @@ def get_book_text(filepath) -> str:
     return file_contents
 
 def main():
-    filepath = "books/frankenstein.txt"
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    filepath = sys.argv[1]
     book_text = get_book_text(filepath)
     word_count = count_words(book_text)
     character_count = get_num_characters(book_text)
